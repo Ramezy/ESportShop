@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  cost: 1
+  quantity: 1
+  references: 
+  references: 
+  references: 
+
+two:
+  status: MyString
+  cost: 1
+  quantity: 1
+  references: 
+  references: 
+  references: 
