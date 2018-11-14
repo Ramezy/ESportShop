@@ -12,4 +12,6 @@ ActiveAdmin.register Page do
 #   permitted
 # end
 
+permit_params :title, :content, :permalink
+
 end
