@@ -5,5 +5,4 @@ class Product < ApplicationRecord
     validates :productCost, presence:true
     validates :productName, presence:true
     validates :productSize, presence:true
-    validates :productStyle, presence:true
 end

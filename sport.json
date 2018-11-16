@@ -1,0 +1,170 @@
+[
+  {
+	"style": "Adidas"
+	"name": "Predator 18.1"
+	"cost": "149.99"
+	"size": "L"
+	"quantity": "20"
+	"description": "Primeknit upper offers a sock-like fit"
+  },
+  {
+	"style": "Adidas"
+	"name": "Predator 18.1"
+	"cost": "149.99"
+	"size": "M"
+	"quantity": "27"
+	"description": "Primeknit upper offers a sock-like fit"
+  },
+  {
+	"style": "Adidas"
+	"name": "Predator 18.1"
+	"cost": "149.99"
+	"size": "s"
+	"quantity": "30"
+	"description": "Primeknit upper offers a sock-like fit"
+  },
+  {
+	"style": "Adidas"
+	"name": "X 18+"
+	"cost": "279.99"
+	"size" "L"
+	"quantity": "35"
+	"description": "SkeletalWeave upper for second-skin-like fit"
+  },
+  {
+	"style": "Adidas"
+	"name": "X 18+"
+	"cost": "279.99"
+	"size" "M"
+	"quantity": "45"
+	"description": "SkeletalWeave upper for second-skin-like fit"
+  },
+  {
+	"style": "Adidas"
+	"name": "X 18+"
+	"cost": "279.99"
+	"size" "S"
+	"quantity": "36"
+	"description": "SkeletalWeave upper for second-skin-like fit"
+  },
+  {
+	"style": "Puma"
+	"name": "Future 2.1"
+	"cost": "219.99"
+	"size": "L"
+	"quantity": "28" 
+	"description": "A form-fitting textile base material"
+  },
+  {
+	"style": "Puma"
+	"name": "Future 2.1"
+	"cost": "219.99"
+	"size": "M"
+	"quantity": "24" 
+	"description": "A form-fitting textile base material"
+  },
+  {
+	"style": "Puma"
+	"name": "Future 2.1"
+	"cost": "219.99"
+	"size": "S"
+	"quantity": "45" 
+	"description": "A form-fitting textile base material"
+  },
+  {
+	"style": "Nike"
+	"name": "Mercurial Superfly 6"
+	"cost": "279.99"
+	"size": "L"
+	"quantity": "100" 
+	"description": "Built for speed."
+  },
+  {
+	"style": "Nike"
+	"name": "Mercurial Superfly 6"
+	"cost": "279.99"
+	"size": "M"
+	"quantity": "200" 
+	"description": "Built for speed."
+  },
+  {
+	"style": "Nike"
+	"name": "Mercurial Superfly 6"
+	"cost": "279.99"
+	"size": "S"
+	"quantity": "50" 
+	"description": "Built for speed."
+  },
+  {
+	"style": "Nike"
+	"name": "React Phantom"
+	"cost": "119.99"
+	"size": "L"
+	"quantity": "70" 
+	"description": "Two layered upper"
+  },
+  {
+	"style": "Nike"
+	"name": "React Phantom"
+	"cost": "119.99"
+	"size": "M"
+	"quantity": "60" 
+	"description": "Two layered upper"
+  },
+  {
+	"style": "Nike"
+	"name": "React Phantom"
+	"cost": "119.99"
+	"size": "S"
+	"quantity": "80" 
+	"description": "Two layered upper"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 3"
+	"cost": "79.99"
+	"size": "L"
+	"quantity": "150" 
+	"description": "Reactive outsole with a stud"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 3"
+	"cost": "79.99"
+	"size": "M"
+   	"quantity": "120" 
+	"description": "Reactive outsole with a stud"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 3"
+	"cost": "79.99"
+	"size": "S"
+	"quantity": "140" 
+	"description": "Reactive outsole with a stud"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 1"
+	"cost": "149.99"
+	"size": "L"
+	"quantity": "67" 
+	"description": "Leather vamp for touch and fit"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 1"
+	"cost": "149.99"
+	"size": "M"
+	"quantity": "85" 
+	"description": "Leather vamp for touch and fit"
+  },
+  {
+	"style": "Puma"
+	"name": "ONE 1"
+	"cost": "149.99"
+	"size": "S"
+	"quantity": "80" 
+	"description": "Leather vamp for touch and fit"
+  },
+]
