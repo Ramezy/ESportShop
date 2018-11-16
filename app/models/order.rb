@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-    belongs_to :admin
+    belongs_to :customer
     has_many :customer
 
     validates :status, presence:true

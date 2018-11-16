@@ -1,11 +1,11 @@
 require 'json'
 
-file = File.read(sport.json)
+file = File.read("sport.json")
 data = JSON.parse(file)
 
 customerUser = Customer.create( :name => "Jack Missga", :address => "160 Princess Street")
 
-adminUser = Admin.create( :name => "Aramide", :address => "295 Princess Street")
+adminUser = Admin.( :name => "Aramide", :address => "295 Princess Street")
 
 order = Order.create( :status => "Processing", :admin => adminUser, :cost => 20, :quantity => 5)
 

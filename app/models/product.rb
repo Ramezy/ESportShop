@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-    belongs_to :customer
-    has_many :order, through: :customer
+    has_many :product_orders
+    has_many :orders, through: :product_orders
 
     validates :productCost, presence:true
     validates :productName, presence:true
