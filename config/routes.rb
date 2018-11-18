@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'product/index'
+  get 'product/show'
   get 'pages/permalink'
   get 'pages/show'
   get 'pages/about'
