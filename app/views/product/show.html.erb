@@ -1,2 +1,17 @@
-<h1>Product#show</h1>
-<p>Find me in app/views/product/show.html.erb</p>
+<div class="product">
+    <p>
+        <b>Style: </b> <%= @product.productStyle %>
+    </p>
+    <p>
+        <b>Name: </b> <%= @product.productName %>
+    </p>
+    <p>
+        <b>Size: </b> <%= @product.productSize %>
+    </p>
+    <p>
+        <b>Price: </b> <%= @product.productCost %>
+    </p>
+    <p>
+        <b>Description: </b> <%= @product.productDescription %>
+    </p>
+</div>

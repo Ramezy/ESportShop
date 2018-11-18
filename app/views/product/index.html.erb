@@ -3,6 +3,9 @@
 <% @product_collection.each do |product| %>
     <div class="product">
         <p>
+            <b>Style: </b> <%= product.productStyle %>
+        </p>
+        <p>
             <b>Name: </b> <%= product.productName %>
         </p>
         <p>
