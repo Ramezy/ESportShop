@@ -3,6 +3,8 @@ class Product < ApplicationRecord
     has_many :product_orders
     has_many :orders, through: :product_orders
 
+    paginates_per 10
+
     validates :productCost, presence:true
     validates :productName, presence:true
     validates :productSize, presence:true

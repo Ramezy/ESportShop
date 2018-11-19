@@ -1,6 +1,6 @@
 class ProductController < ApplicationController
   def index
-    @product_collection = Product.order(:productName)
+    @products = Product.all.page params[:page]
   end
 
   # GET /product/:id
