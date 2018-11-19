@@ -1,13 +1,13 @@
-<h1>ESportShop</h1>
-
 <% @product_collection.each do |product| %>
     <div class="product">
-        <p>
-            <b>Style: </b> <%= product.productStyle %>
-        </p>
-        <p>
-            <b>Name: </b> <%= link_to product.productName,  product %>
-        </p>
+        <h3>
+            <%= product.productStyle %> <%= link_to product.productName,  product %> 
+        </h3>
+        <% if product.productImage.present? %>
+            <p>
+                <%= image_tag product.productImage %>
+            </p>
+        <% end %>
         <p>
             <b>Price: </b> <%= product.productCost %>
         </p>
