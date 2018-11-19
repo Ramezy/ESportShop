@@ -1,10 +1,16 @@
 <div class="product">
-    <p>
-        <b>Style: </b> <%= product.productStyle %>
-    </p>
-    <p>
-        <b>Name: </b> <%= link_to product.productName, product %>
-    </p>
+    <h3>
+        <% if show_link %>
+            <%= product.productStyle %> <%= link_to product.productName,  product %> 
+        <% else %>
+            <%= product.productStyle %> <%= product.productName %>
+        <% end %>
+    </h3>
+    <% if product.productImage.present? %>
+        <p>
+            <%= image_tag product.productImage.url %>
+        </p>
+    <% end %>
     <p>
         <b>Size: </b> <%= product.productSize %>
     </p>

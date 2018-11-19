@@ -1,15 +1,4 @@
-<% @product_collection.each do |product| %>
-    <div class="product">
-        <h3>
-            <%= product.productStyle %> <%= link_to product.productName,  product %> 
-        </h3>
-        <% if product.productImage.present? %>
-            <p>
-                <%= image_tag product.productImage.url %>
-            </p>
-        <% end %>
-        <p>
-            <b>Price: </b> <%= product.productCost %>
-        </p>
-    </div>
-<% end %>
+<h1>ESportShop</h1>
+<%= render partial: 'product', 
+            collection: @product_collection,
+            locals: { show_link: true } %>

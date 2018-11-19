@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :product, only: [:index, :show]
   resources :home, only:[:index]
-  root to: 'home#index'
+  root to: 'product#index'
 
 end
