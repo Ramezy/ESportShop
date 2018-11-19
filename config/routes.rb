@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resources :search, only:[:index] do
+    collection do
+      get 'results'
+    end
+  end
+
   resources :product, only: [:index, :show]
   resources :home, only:[:index]
   root to: 'product#index'
+
 
 end

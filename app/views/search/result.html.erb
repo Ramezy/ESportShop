@@ -1,0 +1,22 @@
+<h1>Products Available</h1>
+<div>
+    <% if @products.empty? %>
+        <h2> No Products Found.</h2>
+    <% elsif @products.size == 1 %>
+        <h2><%= @products.size %> Product Found. </h2>
+    <% else %>
+        <h1><%= @products.size %> Product Found. </h2>
+    <% end %>
+
+    <% if @products.empty? %>
+        <p>No Product Found.</p>
+    <% else %>
+
+    <% @products.each do |each| %>
+        <h2> <%= product.productStyle %> <%= link_to product.productName,  product %> </h2>
+        <p>
+            <img src="<%= image_tag product.productImage.url %>" height="250" width="400">
+        </p>
+    <% end %>
+    <%= paginate @products %>
+</div>
