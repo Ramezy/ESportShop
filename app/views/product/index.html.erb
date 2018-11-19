@@ -5,7 +5,7 @@
         </h3>
         <% if product.productImage.present? %>
             <p>
-                <%= image_tag product.productImage %>
+                <%= image_tag product.productImage.url %>
             </p>
         <% end %>
         <p>
