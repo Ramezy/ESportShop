@@ -1,23 +1,24 @@
 <div class="product">
-    <h3>
-        <% if show_link %>
+    <% if show_link %>
+        <h3>
             <%= product.productStyle %> <%= link_to product.productName,  product %> 
-        <% else %>
+    <% else %>
             <%= product.productStyle %> <%= product.productName %>
-        <% end %>
-    </h3>
+        </h3>
+        <p>
+            <b>Size: </b> <%= product.productSize %>
+        </p>
+        <p>
+            <b>Description: </b> <%= product.productDescription %>
+        </p>
+    <% end %>
+
     <% if product.productImage.present? %>
         <p>
             <%= link_to (image_tag product.productImage.url), product %>
         </p>
     <% end %>
     <p>
-        <b>Size: </b> <%= product.productSize %>
-    </p>
-    <p>
-        <b>Price: </b> <%= product.productCost %>
-    </p>
-    <p>
-        <b>Description: </b> <%= product.productDescription %>
+        <%= product.productCost %>
     </p>
 </div>
