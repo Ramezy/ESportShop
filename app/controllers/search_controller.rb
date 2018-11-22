@@ -3,6 +3,14 @@ class SearchController < ApplicationController
   end
 
   def results
-    @products = Product.where('product.category.name LIKE ?', "%#{params[:q]}%").page(params[:page])
+
+    @products = []
+
+    if params[:query_cat][:category_id].present?
+      category = Category.find(params[:query_cat][:category_id])
+      @products = category.products.where('productStyle LIKE ?', "%#{params[:q]}%")
+    else
+      @products = []
+    end
   end
 end

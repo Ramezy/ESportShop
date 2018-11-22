@@ -1,2 +1,19 @@
-<h1>Category#results</h1>
-<p>Find me in app/views/category/results.html.erb</p>
+<% if @product.empty? %>
+    <h1>No Product Found </h1>
+<% else %>
+    <div>
+        <p><%= link_to "Categories", root_path %> / <%= link_to "#{@products.first.category.name}", results_category_index_path(:category => @products.first.category.id)%></p>
+    </div>
+
+    <% if @products.count == 1 %>
+        <h2><%= @products.count %> Product Found in <%= @products.first.category.name %> Category.</h2>
+    <% else %>
+        <h1><%= @products.count %> Products found in <%= @products.first.category.name %> Category.</h2>
+    <% end %>
+
+    <%= render partial: 'product/product', 
+        collection: @products,
+        locals: { show_link: true } %>
+
+    <%= paginate @products %>
+<% end %>

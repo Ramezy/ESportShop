@@ -2,7 +2,12 @@
     <% if show_link %>
         <h3>
             <%= product.productStyle %> <%= link_to product.productName,  product %> 
+        </h3>
     <% else %>
+    <div>
+        <p><%= link_to "Category", root_path %> /  <%= link_to "#{product.category.name}", results_category_index_path(:category => product.category.id)%> / <%= link_to "#{product.name}", product_path(:id => product.id)%></p>
+    </div>
+        <h3>
             <%= product.productStyle %> <%= product.productName %>
         </h3>
         <p>

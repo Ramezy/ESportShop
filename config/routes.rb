@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :category , only:[:index] do
+    collection do
+      get 'results'
+    end
+  end
+
   resources :product, only: [:index, :show]
   resources :home, only:[:index]
   root to: 'product#index'

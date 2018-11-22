@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <header>
+      <%= form_tag(results_search_index_path, method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= collection_select(:query_cat,:category_id , Category.all.order(:name), :id, :name) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+      <div>
+          <% cat = Category.all %>
+          <% cat.each do |c| %>
+            <p><%= link_to c.name, results_category_index_path(:category => c.id) %></p>
+          <% end %>
+      </div>
+    </header>
     <%= render partial: 'shared/header' %>
     <%= render partial: 'shared/menu' %>
     <%= yield %>
