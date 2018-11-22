@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'category/index'
+  get 'category/results'
   get 'pages/permalink'
   get 'pages/show'
   get 'pages/about'

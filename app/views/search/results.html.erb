@@ -2,8 +2,6 @@
 <div>
     <% if @products.empty? %>
         <h2> No Products Found.</h2>
-    <% elsif @products.size == 1 %>
-        <h2><%= @products.size %> Product Found. </h2>
     <% else %>
         <h1><%= @products.size %> Product Found. </h2>
     <% end %>

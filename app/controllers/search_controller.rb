@@ -3,6 +3,6 @@ class SearchController < ApplicationController
   end
 
   def results
-    @products = Product.where('productName LIKE ?', "%#{params[:q]}%").where('productStyle LIKE ?', "%#{params[:q]}%").page(params[:page])
+    @products = Product.where('product.category.name LIKE ?', "%#{params[:q]}%").page(params[:page])
   end
 end
