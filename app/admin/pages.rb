@@ -1,4 +1,3 @@
 ActiveAdmin.register Page do
-permit_params :title, :content, :permalink
-
+    permit_params :Title, :Content, :perma
 end

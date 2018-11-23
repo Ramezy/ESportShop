@@ -14,5 +14,6 @@ class PagesController < ApplicationController
   end
 
   def about
+    @page = Page.find(params[:id])
   end
 end

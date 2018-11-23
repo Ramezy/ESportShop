@@ -23,6 +23,15 @@
             <p><%= link_to c.name, results_category_index_path(:category => c.id) %></p>
           <% end %>
       </div>
+      <div>
+        <%= form_tag(filter_index_path, method: "get") do %>
+          <%= label_tag(:query, "Filter:") %>
+          <%= collection_select(:query_deal, :deal_id, Deal.all.order(:name), :id, :name) %>
+          <%= submit_tag("Filter") %>
+        <% end %>
+        <br>
+        <br>
+      </div>
     </header>
     <%= render partial: 'shared/header' %>
     <%= render partial: 'shared/menu' %>

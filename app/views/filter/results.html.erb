@@ -1,2 +1,15 @@
-<h1>Filter#results</h1>
-<p>Find me in app/views/filter/results.html.erb</p>
+% if @product.empty? %>
+    <h1>No Product Found </h1>
+<% else %>
+    <% if @products.count == 1 %>
+        <h2><%= @products.count %> Product Found in <%= @products.first.deal.name %> Category.</h2>
+    <% else %>
+        <h1><%= @products.count %> Products found in <%= @products.first.deal.name %> Category.</h2>
+    <% end %>
+
+    <%= render partial: 'product/product', 
+        collection: @products,
+        locals: { show_link: true } %>
+
+    <%= paginate @products %>
+<% end %>

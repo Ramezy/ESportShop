@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'filter/index'
-  get 'filter/results'
-  get 'category/index'
-  get 'category/results'
   get 'pages/permalink'
   get 'pages/show'
   get 'pages/about'
@@ -22,9 +18,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :filter, only:[:index] do
+    collection do
+      get 'results'
+    end
+  end
+
   resources :product, only: [:index, :show]
   resources :home, only:[:index]
   root to: 'product#index'
 
-
+  
 end
