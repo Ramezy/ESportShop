@@ -21,6 +21,31 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname, autocomplete: 'firstname', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname, autocomplete: 'lastname', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, autocomplete: 'address', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, autocomplete: 'city', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :province %>
+    <%= f.collection_select :province_id, Province.order(:name), :id, :name, prompt: 'Choose your Province', required: true , class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
