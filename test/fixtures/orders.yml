@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status: MyString
-  references: 
-  references: 
-  cost: 1
-  quantity: 1
+  quantity: 
+  order_status: 
+  total: 
+  taxes: 
+  tax_info: 
+  grand_total: 
+  charge_id: MyString
 
 two:
-  status: MyString
-  references: 
-  references: 
-  cost: 1
-  quantity: 1
+  quantity: 
+  order_status: 
+  total: 
+  taxes: 
+  tax_info: 
+  grand_total: 
+  charge_id: MyString

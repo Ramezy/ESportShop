@@ -1,8 +1,6 @@
 class Order < ApplicationRecord
-    belongs_to :customer
-    has_many :customer
+    belongs_to :user
 
-    validates :status, presence:true
-    validates :cost, presence:true
-    validates :quantity, presence:true
+    belongs_to :order_status
+    has_many :products
 end
