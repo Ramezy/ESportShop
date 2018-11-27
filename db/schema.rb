@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_052111) do
+ActiveRecord::Schema.define(version: 2018_11_27_175538) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_052111) do
     t.integer "category_id"
     t.integer "deal_id"
     t.integer "user_id"
+    t.boolean "is_available"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["deal_id"], name: "index_products_on_deal_id"
   end

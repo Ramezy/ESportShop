@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  get 'cart/create'
+  get 'order/index'
+  get 'order/show'
   get 'cart/destroy'
-  get 'cart/show'
-  get 'cart/checkout'
+
   #devise_for :users
   get 'pages/permalink'
   get 'pages/show'
   get 'pages/about'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -35,5 +36,11 @@ Rails.application.routes.draw do
   resources :home, only:[:index]
   root to: 'product#index'
 
-  
+  post 'cart/create', to: "cart#create"
+  get '/cart/show', to: "cart#show", as: 'showcart'
+  get '/cart/clear', to "cart#clear", as: 'clear'
+
+  post 'cart/checkout', to: "cart#checkout"
+
+  resources :charges, only: [:new, :create]
 end
