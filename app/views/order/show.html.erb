@@ -1,0 +1,39 @@
+<p><%= link_to "View all Orders", order_index_path %></P>
+
+<h1>Order Details </h1>
+
+<p><b>Order Date: </b><%= @order.created_at %></p>
+<p><b>Order Status: </b><%= @order.order_status.name %></p>
+
+<% if @order.order_status.name == "Pending" %>
+    <%= link_to "Pay Now", new_charge_path(:id => @order.id) %>
+<% end %>
+<br>
+
+<p><b>Order Summary</b></p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+    <tr>
+    <% @order.line_items.each do |pro| %>
+    
+        <tr>
+            <td><%= pro.product.productName %>
+            <td><%= pro.product.productSize %>
+            <td><%= pro.quantity %>
+            <td><%= number_to_currency(pro.total * pro.quantity) %></td>
+        </tr>
+    <% end %>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td><b>Tax Information</b></td>
+    <td><%= number_to_currency( @order.grand_total) %></td>
+</tr>
+
+</table>

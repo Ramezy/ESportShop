@@ -1,0 +1,23 @@
+<% if @orders.empty? %>
+
+<h2>No Orders are Available</h2>
+
+<% else %>
+
+<h3><%= current_user.firstname %>'s Orders</h3>
+<table>
+    <tr>
+        <th>Order Date</th>
+        <th>Order Status</th>
+        <th>View</th>
+    </tr>
+
+    <% @orders.each do |order| %>
+        <tr>
+            <td><%= order.created_at %></td>
+            <td><%= order.order_status.name %>
+            <td><%= link_to "See order details", order_show_path(:id => order.id) %></td>
+        </tr>
+    <% end %>
+</table>
+<% end %>

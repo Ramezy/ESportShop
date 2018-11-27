@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cart/create'
+  get 'cart/destroy'
+  get 'cart/show'
+  get 'cart/checkout'
   #devise_for :users
   get 'pages/permalink'
   get 'pages/show'
