@@ -37,8 +37,10 @@ Rails.application.routes.draw do
   root to: 'product#index'
 
   post 'cart/create', to: "cart#create"
-  get '/cart/show', to: "cart#show", as: 'showcart'
-  get '/cart/clear', to "cart#clear", as: 'clear'
+
+  get '/cart/show', to: "cart#show"
+
+  get '/cart/clear', to: "cart#clear"
 
   post 'cart/checkout', to: "cart#checkout"
 

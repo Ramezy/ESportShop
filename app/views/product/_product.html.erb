@@ -11,11 +11,27 @@
             <%= product.productStyle %> <%= product.productName %>
         </h3>
         <p>
+            <%= product.productCost %>
+        </p>
+        <p>
             <b>Size: </b> <%= product.productSize %>
         </p>
         <p>
             <b>Description: </b> <%= product.productDescription %>
         </p>
+
+        <% if product.stock > 0%>
+            <% if user_signed_in? %>
+                <div><%= button_to 'Add  to Cart', cart_create_path(:product_id => product.id) %></div>
+            <% else %>
+                <div><%= button_to 'Add to Cart', user_session_path %></div>
+            <% end %>
+        <% else %>
+            <div>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><p>Sorry! Product out of stock.</p></strong>
+            </div>
+        <% end %>
     <% end %>
 
     <% if product.productImage.present? %>
@@ -23,8 +39,7 @@
             <%= link_to (image_tag product.productImage.url), product %>
         </p>
     <% end %>
-    <p>
-        <%= product.productCost %>
-    </p>
+    
+    
 
 </div>

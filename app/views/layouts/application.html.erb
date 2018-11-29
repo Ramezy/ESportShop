@@ -17,6 +17,9 @@
         <ul>
           <% if user_signed_in? %>
             <div>
+              <a href="<%= cart_show_path %>"><img src="Ruby/ESportShop/cart/cart.png" height= "43" wdith="43"></a>
+            </div>
+            <div>
               <%= link_to current_user.email, root_path %>
               <%= link_to "Orders" %>
             </div>

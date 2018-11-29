@@ -1,2 +1,45 @@
-<h1>Cart#show</h1>
-<p>Find me in app/views/cart/show.html.erb</p>
+<h1>Cart</h1>
+<p><%=  link_to "Add Items", root_path %></p>
+<br>
+<p><%= link_to "Clear Cart", cart_clear_path %></p>
+
+<% @total = 0 %>
+
+<% @price = 0 %>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Style</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Price</th>
+    </tr>
+
+    <% if params[:error].present? %>
+        <p><%= params[:error] %></p>
+    <% end %>
+
+    <%= form_tag(cart_checkout_path, method: "post") do %>
+    
+    <% @pro_in_cart.each_with_index do |i, index| %>
+        <tr>
+            <td><%= i.productName %></td>
+            <td><%= i.productStyle %></td>
+            <td><%= number_field_tag 'quantity_'+index.to_s, 1, min: 1, max: 20 %></td>
+            <%= hidden_field_tag('vehicle_id_'+index.to_s, i.id) %>
+            <td><%= link_to 'Remove Item', cart_destroy_path(:remove_id => i.id) %></td>
+            <td><%= number_to_currency(i.productCost) %></td>
+            <% @price = i.productCost.to_d %>
+            <% @total += @price %>
+        </tr>
+    <% end %>
+</table>
+    <%= hidden_field_tag(:product_count, @pro_in_cart.size) %>
+    <%= hidden_field_tag(:total, @total) %>
+<br>
+<br>
+    <% if @pro_in_cart.present? %>
+        <%= submit_tag("Checkout") %>
+    <% end %>
+<% end %>

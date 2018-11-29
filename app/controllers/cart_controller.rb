@@ -1,5 +1,6 @@
 class CartController < ApplicationController
-  before_action :initialize_session
+  before_action :init_session
+
   def create
     id = params[:product_id].to_i
 
@@ -10,7 +11,7 @@ class CartController < ApplicationController
 
   def clear
     session[:pro_cart] = []
-    redirect_to showcart_path
+    redirect_to cart_show_path
   end
 
   def show
@@ -21,7 +22,7 @@ class CartController < ApplicationController
     id = params[:remove_id].to_i
 
     session[:pro_cart].delete(id)
-    redirect_to showcart_path
+    redirect_to cart_show_path
   end
 
   def checkout
@@ -32,16 +33,16 @@ class CartController < ApplicationController
 
     number_of_products.times do |i|
 
-      @total += Product.find(params["product_id_#{i}".to_sym].to_i).price * params["quantity_#{i}".to_sym].to_i
+      @total += Product.find(params["product_id_#{i}".to_sym].to_i).productCost * params["quantity_#{i}".to_sym].to_i
 
-      @product_in_stock = Product.find(params["product_id_#{i}".to_sym].to_i)
-      @qty = params["qunatity_#{i}".to_sym].to_i
+      @pro_in_stock = Product.find(params["product_id_#{i}".to_sym].to_i)
+      @qty = params["quantity_#{i}".to_sym].to_i
 
       if @qty > @pro_in_stock.stock
         @error = "Only #{@pro_in_stock.stock} in stock !"
 
         return redirect_to showcart_path(:error => @error)
-      ele
+      else
         @pro_in_stock.stock = @pro_in_stock.stock - @qty
 
         if @pro_in_stock.stock == 0
@@ -55,16 +56,18 @@ class CartController < ApplicationController
 
       session[:pro_cart] = []
       @order_last = Order.all
+    end
   end
 
-  private 
-    def initialize_session
-      session[:pro_cart] || = []
+   
+    def init_session
+      session[:pro_cart] ||= []
     end
 
     def helper
-      @helper || = Class.new do
+      @helper ||= Class.new do
         include ActionView::Helpers::NumberHelper
       end.new
     end
+
 end
