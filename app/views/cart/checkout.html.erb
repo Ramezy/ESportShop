@@ -1,2 +1,49 @@
-<h1>Cart#checkout</h1>
-<p>Find me in app/views/cart/checkout.html.erb</p>
+<h1>Your Order Has been Placed! </h1>
+
+<h3>Order Status: <%= @order_last.order_status.name %></h3>
+
+<%= link_to "Pay Now", new_charge_path(:id => @order_last.last.id) %>
+
+<% order_stuff = @order_last.last %>
+
+<h3>Order Summary: </h3>
+<br>
+<table>
+    <tr>
+        <th>Style</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Price</th>
+        <th>Total Price</th>
+    </tr>
+<% order_stuff.product_orders.each do |pro| %>
+    <tr>
+        <td><%= pro.product.productStyle %></td>
+        <td><%= pro.product.productName %></td>
+        <td><%= pro.product.productSize %></td>
+        <td><%= number_to_currency(pro.product.productCost) %></td>
+        <% total_price = pro.quantity * pro.product.productCost %>
+        <td><%= number_to_currency(total_price) %></td>
+    </tr>
+<% end %>
+    <tr>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><b>Total: </b></td>
+        <td><%= number_to_currency(@total) %></td>
+    </tr>
+    <tr>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><%= number_to_currency(@taxes)%></td>
+    </tr>
+    <tr>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><%=%></td>
+        <td><b>GrandTotal: </b></td>
+        <td><%= number_to_currency(@grand_total) %></td>
+    </tr>
+</table>

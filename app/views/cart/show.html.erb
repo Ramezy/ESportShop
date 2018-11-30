@@ -1,3 +1,5 @@
+<%= console %>
+
 <h1>Cart</h1>
 <p><%=  link_to "Add Items", root_path %></p>
 <br>
@@ -27,7 +29,7 @@
             <td><%= i.productName %></td>
             <td><%= i.productStyle %></td>
             <td><%= number_field_tag 'quantity_'+index.to_s, 1, min: 1, max: 20 %></td>
-            <%= hidden_field_tag('vehicle_id_'+index.to_s, i.id) %>
+            <%= hidden_field_tag('product_id_'+index.to_s, i.id) %>
             <td><%= link_to 'Remove Item', cart_destroy_path(:remove_id => i.id) %></td>
             <td><%= number_to_currency(i.productCost) %></td>
             <% @price = i.productCost.to_d %>
