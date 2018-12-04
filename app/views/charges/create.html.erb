@@ -2,4 +2,4 @@
 <br>
 <h3>Thank you, paid <strong><%= number_to_currency(@amount_pro.to_d/100)%></strong>!</h3>
 
-<h4><%= link_to "View Order Details", order_show_path(:id => @order_id)%></h4>
+<h4><%= link_to "View Order Details", order_path(:id => @order_id)%></h4>

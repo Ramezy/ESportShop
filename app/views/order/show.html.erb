@@ -19,20 +19,21 @@
         <th>Price</th>
         <th>Description</th>
     <tr>
-    <% @order.line_items.each do |pro| %>
+    <% @order.product_orders.each do |pro| %>
     
         <tr>
             <td><%= pro.product.productName %>
             <td><%= pro.product.productSize %>
             <td><%= pro.quantity %>
             <td><%= number_to_currency(pro.total * pro.quantity) %></td>
+            <td><%= pro.product.productDescription %>
         </tr>
     <% end %>
 
 <tr>
     <td></td>
     <td></td>
-    <td><b>Tax Information</b></td>
+    <td><b>Total</b></td>
     <td><%= number_to_currency( @order.grand_total) %></td>
 </tr>
 

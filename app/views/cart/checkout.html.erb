@@ -2,9 +2,9 @@
 
 <h3>Order Status: <%= @order_last.order_status.name %></h3>
 
-<%= link_to "Pay Now", new_charge_path(:id => @order_last.last.id) %>
+<%= link_to "Pay Now", new_charge_path(:id => @order_last.id) %>
 
-<% order_stuff = @order_last.last %>
+<% order_stuff = @order_last %>
 
 <h3>Order Summary: </h3>
 <br>
@@ -36,7 +36,7 @@
     <tr>
         <td><%=%></td>
         <td><%=%></td>
-        <td><%=%></td>
+        <td><b>Taxes: </b><%=%></td>
         <td><%= number_to_currency(@taxes)%></td>
     </tr>
     <tr>

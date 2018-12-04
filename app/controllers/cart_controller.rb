@@ -102,8 +102,10 @@ class CartController < ApplicationController
       end
 
       @grand_total = @total + @taxes
+      
+      order_status = OrderStatus.find(1)
 
-      order = Order.create(quantity: number_of_products, user_id: current_user.id, order_status_id: 1, total: @total, taxes: @taxes, tax_info: @tax_info, grand_total: @grand_total)
+      order = Order.create(quantity: number_of_products, user_id: current_user.id, order_status_id: order_status.id, total: @total, taxes: @taxes, tax_info: @tax_info, grand_total: @grand_total)
 
       number_of_products.times do |k|
         sold_price = Product.find(@products[k]).productCost

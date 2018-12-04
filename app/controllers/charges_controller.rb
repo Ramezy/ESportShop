@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
         charge = Stripe::Charge.create(
             :customer => customer.id,
             :amount => @amount_pro,
-            :description => 'Rails Stripe customer'
+            :description => 'Rails Stripe customer',
             :currency => 'usd'
         )
 
@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
 
             order = Order.find(@order_id)
 
-            order.charge_id = charge_id
+            order.charge_id = charge.id
             order.order_status_id = 2
 
             order.save

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'order/index'
-  get 'order/show'
   get 'cart/destroy'
 
   #devise_for :users
@@ -34,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :product, only: [:index, :show]
   resources :home, only:[:index]
+  resources :order, only:[:index, :show]
   root to: 'product#index'
 
   post 'cart/create', to: "cart#create"
